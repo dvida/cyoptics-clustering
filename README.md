@@ -150,3 +150,9 @@ I hope you will enjoy using this software as least as I have enjoyed making it!
 # Citing and use for academic papers
 If you find this work interesting, feel free to use it! I would ask you to reference this GitHub page until I publish a proper paper on application of this method.
 
+# References
+
+* [1] Ankerst, Mihael, Markus M. Breunig, Hans-Peter Kriegel, and Jörg Sander. "OPTICS: ordering points to identify the clustering structure." In ACM Sigmod Record, vol. 28, no. 2, pp. 49-60. ACM, 1999.
+* [2] Brecheisen, Stefan, Hans-Peter Kriegel, Peer Kröger, and Martin Pfeifle. "Visually Mining through Cluster Hierarchies." In SDM, pp. 400-411. 2004.
+* [3] [Gradient clustering - atidjani GitHub page](https://github.com/atidjani/IoSL_Clustering/wiki/Gradient-Clustering)
+
