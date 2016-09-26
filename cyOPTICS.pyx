@@ -278,7 +278,7 @@ def runCyOPTICS(np.ndarray[FLOAT_TYPE_t, ndim=2] input_list, float eps, int min_
     cdef int ordered_count = 0
 
     # Init the seeds list
-    cdef np.ndarray[INT_TYPE_t, ndim=1] seeds = np.zeros(input_list_size*2, dtype=INT_TYPE)
+    cdef np.ndarray[INT_TYPE_t, ndim=1] seeds = np.zeros(input_list_size, dtype=INT_TYPE)
     cdef int seed_count = 0
 
     # Init neighbor indices
