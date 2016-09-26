@@ -12,7 +12,7 @@ First, you need to have the following installed to use this:
 2. numpy 1.11.0+
 3. cython 0.24.0+ 
   * If you are of Windows, you may have trouble installing it, use [this](https://github.com/cython/cython/wiki/CythonExtensionsOnWindows) tutorial. Modifying the find_vcvarsall() function and setting "compiler=msvc" worked for me.
-  * If you are on Linux, cython installs without a hitch. It's free and it works, what more say?
+  * If you are on Linux, cython installs without a hitch. It's free and it works, what more to say?
 4. matplotlib 1.5+
   * This is just for data vizualization, if you just want raw data it is possible not to use matplotlib whatsoever.
 
