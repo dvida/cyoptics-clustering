@@ -186,7 +186,12 @@ def gradientClustering(reach_list, min_pts, t, w):
                     # While the last point in the start_pts has a smaller reachability distance than the current
                     # point, keep removing points from the end and add them to a list of clusters
                     while reach_list[start_pts[-1]] < reach_list[i]:
-                        set_of_clusters.append(range(start_pts[-1], last_endpoint))
+                        
+                        temp_cluster = range(start_pts[-1], last_endpoint)
+
+                        # Check if the temporary cluster size is larger than the minimum number of points required
+                        if len(temp_cluster) >= min_pts:
+                            set_of_clusters.append(temp_cluster)
 
                         # Remove the last start point from the list of start points
                         start_pts.pop()
