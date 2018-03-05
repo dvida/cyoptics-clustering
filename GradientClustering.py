@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from __future__ import print_function, absolute_import, division
 
 import copy
 import numpy as np
@@ -340,7 +341,7 @@ def mergeSimilarClusters(clusters, similarity_threshold):
                 if (intersect_points >= similarity_threshold*bigger_size):
 
                     # Merge two clusters into one
-                    new_merged_cluster = sorted(list(set(cluster1 + cluster2)))
+                    new_merged_cluster = sorted(list(set(set(cluster1) | set(cluster2))))
 
                     # Put the merged cluster to the list of merged clusters
                     merged_clusters.append(new_merged_cluster)

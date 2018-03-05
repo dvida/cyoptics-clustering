@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-
+from __future__ import print_function, division, absolute_import
 
 import numpy as np
 
@@ -172,7 +172,7 @@ if __name__ == '__main__':
 
     ### 
 
-    print 'Input data size', len(input_data)
+    print('Input data size', len(input_data))
 
     # Plot input data
     plotPoints(input_data, title='Input data')
@@ -183,14 +183,14 @@ if __name__ == '__main__':
     # Run OPTICS ordering
     ordered_list = runOPTICS(input_data, epsilon, min_points)
 
-    print 'Total time for processing', time.clock() - t1, 's'
+    print('Total time for processing', time.clock() - t1, 's')
 
-    print 'Ordered list'
-    print 'Point index [Processed, reachability dist, code dist, input data ... ]'
+    print('Ordered list')
+    print('Point index [Processed, reachability dist, code dist, input data ... ]')
     for j, entry in enumerate(ordered_list):
-        print j, entry
+        print(j, entry)
 
-    print ordered_list[:,1]
+    print(ordered_list[:,1])
 
     # Plot the reachability diagram
     plotClusteringReachability(ordered_list[:,1])
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     filtered_clusters = filterLargeClusters(clusters, len(ordered_list), max_points_ratio)
 
 
-    print 'TOTAL BEFORE MERGING', len(filtered_clusters)
+    print('TOTAL BEFORE MERGING', len(filtered_clusters))
 
     # Plot the results, reachability diagram
     plotClusteringReachability(ordered_list[:,1], filtered_clusters)
@@ -213,8 +213,8 @@ if __name__ == '__main__':
     # Merge similar clusters by looking at the ratio of their intersection and their total number
     filtered_clusters = mergeSimilarClusters(filtered_clusters, cluster_similarity_threshold)
 
-    print 'TOTAL POINTS', len(ordered_list[:,1])
-    print 'CLUSTERS'
+    print('TOTAL POINTS', len(ordered_list[:,1]))
+    print('CLUSTERS')
     for cluster in filtered_clusters:
 
         members = ordered_list[cluster][:,3:]
@@ -226,12 +226,12 @@ if __name__ == '__main__':
         y_std = np.std(members[:,1])
 
 
-        print '------------------------------------------'
+        print('------------------------------------------')
         
-        print 'Size, X mean +/- stddev, Y mean +/- stddev'
-        print len(cluster), x_mean, x_std, y_mean, y_std
-        print 'Members:'
-        print members
+        print('Size, X mean +/- stddev, Y mean +/- stddev')
+        print(len(cluster), x_mean, x_std, y_mean, y_std)
+        print('Members:')
+        print(members)
 
     # Plot the results, reachability diagram
     plotClusteringReachability(ordered_list[:,1], filtered_clusters)
