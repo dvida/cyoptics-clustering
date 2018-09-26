@@ -85,7 +85,7 @@ def plotPoints(points, clusters=[], title=''):
     plt.gca().grid(color='0.5')
 
     # Set background color to black
-    plt.gca().set_axis_bgcolor('black')
+    plt.gca().set_facecolor('black')
 
     # Set the ratio to the window size 1:1
     plt.gca().set_aspect('equal')
