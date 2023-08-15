@@ -391,7 +391,7 @@ def plotClusteringReachability(reach_list, clusters=[]):
     cm = plt.get_cmap('gist_rainbow')
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.set_color_cycle([cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])
+    ax.set_prop_cycle(color=[cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)])  
 
     # Plot the reachability plot
     ax.plot(range(len(reach_list)), reach_list)
